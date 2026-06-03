@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synaptis — Conseil &amp; Automatisation IA</title>
+    <meta name="description" content="Synaptis accompagne votre entreprise dans la transition vers l'intelligence artificielle grâce au conseil stratégique et à l'intégration d'automatisations sur-mesure.">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="site-header" id="site-header">
+        <div class="header-container">
+            <a href="#" class="logo-link" id="logo-link">
+                <img src="assets/logo/synaptislogo.png" alt="Synaptis Logo" class="logo-img" id="logo-img">
+            </a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" id="mobile-nav-toggle">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="primary-navigation" id="primary-navigation">
+                <ul class="nav-list" role="list">
+                    <li><a href="#procedes" class="nav-link">Procédés</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#equipe" class="nav-link">Notre équipe</a></li>
+                    <li><a href="#projets" class="nav-link">Projets</a></li>
+                    <li class="mobile-only-cta"><a href="#contact" class="btn btn-cta">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-cta" id="nav-cta">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" id="hero-title">L'Intelligence<br><span class="serif-title">Organique.</span></h1>
+                <div class="hero-actions">
+                    <a href="#procedes" class="btn btn-hero-cta" id="hero-cta">
+                        <span>Nous découvrir</span>
+                        <svg class="hero-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro & Scroll Animation Section (L'Intelligence Organique) -->
+    <section class="intro-section" id="procedes">
+        <div class="intro-track">
+            <div class="intro-sticky-container">
+                <!-- Centered Content -->
+                <div class="intro-content">
+                    <h2 class="intro-title"><span class="serif-title">Synaptis, agence de conseil en IA,</span><br>vous aide à transformer vos données<br>en décisions performantes.</h2>
+                </div>
+                <!-- Canvas Video Card Reveal -->
+                <div class="canvas-wrapper">
+                    <!-- Static Title parented to the video card reveal -->
+                    <h2 class="static-section-title">Notre <span class="serif-title">procédé</span></h2>
+                    <canvas id="anim-canvas"></canvas>
+                    
+                    <!-- Text overlay container for scroll timeline phases -->
+                    <div class="step-text-container">
+                        <!-- Step 1 -->
+                        <div class="step-text" data-step="0">
+                            <span class="step-number">ÉTAPE 01</span>
+                            <h3 class="step-title">Contact</h3>
+                            <p class="step-desc">Entrez en contact avec notre équipe pour partager vos besoins et objectifs. Nous prenons le temps de comprendre vos priorités afin de définir ensemble les premières étapes clés de votre projet en intelligence artificielle.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="step-text" data-step="1">
+                            <span class="step-number">ÉTAPE 02</span>
+                            <h3 class="step-title">Consulting</h3>
+                            <p class="step-desc">Nous identifions vos enjeux stratégiques et opérationnels pour déterminer comment l’intelligence artificielle peut répondre à vos besoins. Cette étape permet de poser les bases d’une transformation réussie.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="step-text" data-step="2">
+                            <span class="step-number">ÉTAPE 03</span>
+                            <h3 class="step-title">Intégration &amp; Développement</h3>
+                            <p class="step-desc">Nous passons à l'action en intégrant les solutions IA sélectionnées au cœur de vos processus. De la configuration technique à la mise en production, nous assurons une transition fluide pour garantir un impact immédiat sur votre productivité et vos performances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Layout Section -->
+    <section class="cards-section" id="services">
+        <div class="cards-container">
+            <div class="cards-grid">
+                <!-- Large Left Card -->
+                <div class="card card-large">
+                    <div class="card-content">
+                        <h2 class="card-title">Nos <span class="serif-title">services</span></h2>
+                        <p class="card-desc">Nous accompagnons votre entreprise dans l'adoption de l'intelligence artificielle pour optimiser vos processus et accélérer votre croissance.</p>
+                        <p class="card-desc">De l'audit initial au déploiement de solutions d'automatisation sur-mesure, nous concevons des technologies adaptées à vos objectifs opérationnels.</p>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn btn-card-cta">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Audit & Conseil -->
+                <div class="card card-service card-audit">
+                    <!-- Visual Container -->
+                    <div class="service-visual-container">
+                        <div class="visual-chart-box">
+                            <span class="chart-tooltip">+15%</span>
+                            <!-- SVG Chart Path -->
+                            <svg class="chart-svg" viewBox="0 0 300 150">
+                                <defs>
+                                    <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="rgba(110, 165, 206, 0.3)" />
+                                        <stop offset="100%" stop-color="rgba(110, 165, 206, 0)" />
+                                    </linearGradient>
+                                    <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
+                                        <stop offset="0%" stop-color="rgba(110, 165, 206, 0.4)" />
+                                        <stop offset="50%" stop-color="rgba(110, 165, 206, 1)" />
+                                        <stop offset="100%" stop-color="rgba(110, 165, 206, 0.6)" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Fill Area -->
+                                <path class="chart-area" d="M 0,150 C 50,110 80,70 110,85 C 140,100 180,60 210,50 C 240,40 270,80 300,50 L 300,150 Z" fill="url(#chart-grad)" />
+                                <!-- Line Path -->
+                                <path class="chart-line" d="M 0,150 C 50,110 80,70 110,85 C 140,100 180,60 210,50 C 240,40 270,80 300,50" fill="none" stroke="url(#line-grad)" stroke-width="3" />
+                                <!-- Another wave (lower opacity) -->
+                                <path class="chart-line-secondary" d="M 0,140 C 60,80 100,120 140,70 C 185,20 220,100 300,40" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" />
+                                <!-- Active Dot -->
+                                <circle cx="210" cy="50" r="5" fill="#6ea5ce" />
+                                <circle cx="210" cy="50" r="10" fill="none" stroke="rgba(110, 165, 206, 0.3)" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Text Content -->
+                    <div class="service-content">
+                        <h3 class="service-title">Audit &amp; Conseil</h3>
+                        <p class="service-desc">Notre offre d’audit et de conseil est adaptée aux spécificités de votre organisation. Nous réalisons un audit détaillé de vos process et livrons des recommandations personnalisées pour intégrer l’IA de manière optimale.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Solutions IA -->
+                <div class="card card-service card-solutions">
+                    <!-- Visual Container -->
+                    <div class="service-visual-container">
+                        <div class="visual-chat-box">
+                            <!-- Chat Message 1: User -->
+                            <div class="chat-message chat-user">
+                                <div class="message-content-wrapper">
+                                    <span class="user-name">Faik Toplu</span>
+                                    <span class="user-text">Résume ce rapport</span>
+                                </div>
+                                <div class="user-avatar-wrapper">
+                                    <!-- Stylized SVG Avatar of a brown-haired man -->
+                                    <svg viewBox="0 0 40 40" class="avatar-svg">
+                                        <circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.08)" />
+                                        <!-- Hair back -->
+                                        <path d="M 12,18 C 12,9 28,9 28,18 Z" fill="#3d2b1f" />
+                                        <!-- Face -->
+                                        <circle cx="20" cy="19" r="7.5" fill="#fed7aa" />
+                                        <!-- Hair front/sides -->
+                                        <path d="M 12,15 C 13,11 27,11 28,15 C 25,12 15,12 12,15 Z" fill="#3d2b1f" />
+                                        <path d="M 12,15 L 13.5,19 L 15,16 Z" fill="#3d2b1f" />
+                                        <path d="M 28,15 L 26.5,19 L 25,16 Z" fill="#3d2b1f" />
+                                        <!-- Shoulders/Clothes -->
+                                        <path d="M 10,34 C 10,29 14,27 20,27 C 26,27 30,29 30,34 Z" fill="rgba(110, 165, 206, 0.4)" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <!-- Chat Message 2: AI -->
+                            <div class="chat-message chat-ai">
+                                <div class="ai-avatar">AI</div>
+                                <div class="message-body">
+                                    <span class="ai-name">AI assistant</span>
+                                    <div class="ai-text-wrapper">
+                                        <span class="ai-text line-1">Bien sûr, voici un résumé:</span>
+                                        <span class="ai-text line-2">1. Analyse &amp; automatisation des process.</span>
+                                        <span class="ai-text line-3">2. Intégration d'agents intelligents.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chat Input Bar -->
+                            <div class="chat-input-bar">
+                                <svg class="input-icon-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+                                </svg>
+                                <div class="input-placeholder"></div>
+                                <svg class="input-icon-send" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text Content -->
+                    <div class="service-content">
+                        <h3 class="service-title">Solutions IA</h3>
+                        <p class="service-desc">Nous concevons des solutions IA sur mesure : agents intelligents, automatisations, applications personnalisées et systèmes vocaux. Chaque projet est pensé pour s’intégrer naturellement à vos outils et répondre à des enjeux métiers concrets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="equipe">
+        <div class="team-container">
+            <!-- Header of Section -->
+            <div class="team-header">
+                <h2 class="team-section-title">Synaptis <span class="serif-title">Team</span></h2>
+                <p class="team-section-desc">Synaptis rassemble des ingénieurs et consultants unis par une mission unique : transformer les technologies de pointe en leviers de performance concrets pour votre entreprise.</p>
+            </div>
+            
+            <!-- Team Grid -->
+            <div class="team-grid">
+                <!-- Member 1: Sacha Dubernet -->
+                <a href="https://www.linkedin.com/in/sacha-dubernet/" target="_blank" rel="noopener noreferrer" class="team-card member-card">
+                    <div class="member-photo-placeholder"></div>
+                    <div class="member-overlay">
+                        <div class="member-info">
+                            <h3 class="member-name">Sacha Dubernet</h3>
+                            <p class="member-role">Co-fondateur &amp; CEO</p>
+                        </div>
+                        <svg class="member-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Member 2: Romain Mazarin -->
+                <a href="https://www.linkedin.com/in/romain-mazarin-4a8b21244/" target="_blank" rel="noopener noreferrer" class="team-card member-card">
+                    <div class="member-photo-placeholder"></div>
+                    <div class="member-overlay">
+                        <div class="member-info">
+                            <h3 class="member-name">Romain Mazarin</h3>
+                            <p class="member-role">Co-fondateur &amp; CTO</p>
+                        </div>
+                        <svg class="member-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Quote Card -->
+                <div class="team-card quote-card">
+                    <div class="quote-icon">“</div>
+                    <p class="quote-text">Nous ne concevons pas simplement des automatisations. Nous façonnons l’infrastructure de votre compétitivité future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projets">
+        <div class="projects-container">
+            <h2 class="projects-section-title">Nos <span class="serif-title">projets</span></h2>
+            <div class="projects-grid">
+                <!-- Left: Accordion list of projects -->
+                <div class="projects-list">
+                    <!-- Project 1 -->
+                    <div class="project-item active" data-project="0">
+                        <div class="project-header">
+                            <span class="project-year">2026</span>
+                            <div class="project-title-row">
+                                <h3 class="project-title">TFG — Agent Support Client IA</h3>
+                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">Conception et intégration d'un agent conversationnel intelligent capable d'analyser en temps réel les requêtes des clients, de synthétiser des bases de connaissances complexes et de résoudre de manière autonome plus de 85% des tickets d'assistance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-item" data-project="1">
+                        <div class="project-header">
+                            <span class="project-year">2026</span>
+                            <div class="project-title-row">
+                                <h3 class="project-title">NBS — Moteur de Recommandation</h3>
+                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">Développement d'un algorithme d'apprentissage automatique supervisé analysant le comportement d'achat en temps réel pour suggérer des produits personnalisés, augmentant ainsi le panier moyen de 18% sur l'ensemble de la plateforme.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-item" data-project="2">
+                        <div class="project-header">
+                            <span class="project-year">2026</span>
+                            <div class="project-title-row">
+                                <h3 class="project-title">Avatacar — Automatisation de Workflows</h3>
+                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">Mise en place de flux d'automatisation intelligents connectés à l'ERP et au CRM, optimisant la facturation, le suivi client et l'attribution des tâches internes avec une réduction démontrée de 30% des coûts opérationnels.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Visual mockup screen -->
+                <div class="projects-showcase">
+                    <div class="showcase-frame">
+                        <img src="assets/images/mac.jpg" alt="Synaptis Projet Mockup" class="showcase-img active">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-card">
+                <!-- Left Column: Title & Info -->
+                <div class="contact-info">
+                    <h2 class="contact-title">Démarrons votre <span class="serif-title">projet</span></h2>
+                    <p class="contact-desc">Vous avez un projet en intelligence artificielle ou souhaitez auditer vos processus actuels ? Contactez-nous pour échanger sur vos besoins et concevoir ensemble des solutions sur-mesure.</p>
+                </div>
+
+                <!-- Right Column: Interactive Form -->
+                <form class="contact-form" id="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="form-name" class="form-label">Quel est votre Nom/Prénom ? *</label>
+                            <input type="text" id="form-name" name="name" class="form-input" placeholder="Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email" class="form-label">Quelle est votre adresse e-mail ? *</label>
+                            <input type="email" id="form-email" name="email" class="form-input" placeholder="E-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-company" class="form-label">Nom Entreprise *</label>
+                            <input type="text" id="form-company" name="company" class="form-input" placeholder="Saisissez le nom de l'entreprise" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-website" class="form-label">Site web Entreprise *</label>
+                            <input type="url" id="form-website" name="website" class="form-input" placeholder="Saisissez le site web de l'entreprise" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-revenue" class="form-label">Chiffre d'affaires annuel *</label>
+                            <select id="form-revenue" name="revenue" class="form-input form-select" required>
+                                <option value="" disabled selected>Sélectionnez une fourchette de revenus</option>
+                                <option value="<100k">Moins de 100k€</option>
+                                <option value="100k-500k">100k€ - 500k€</option>
+                                <option value="500k-1M">500k€ - 1M€</option>
+                                <option value="1M-2M">1M€ - 2M€</option>
+                                <option value=">2M">Plus de 2M€</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-budget" class="form-label">Budget du projet *</label>
+                            <select id="form-budget" name="budget" class="form-input form-select" required>
+                                <option value="" disabled selected>Sélectionnez votre budget</option>
+                                <option value="<10k">&lt; 10k €</option>
+                                <option value="10k-50k">10k € - 50k €</option>
+                                <option value="50k-150k">50k € - 150k €</option>
+                                <option value="150k+">150k+ €</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-service" class="form-label">Quels services vous intéressent ? *</label>
+                            <select id="form-service" name="service" class="form-input form-select" required>
+                                <option value="" disabled selected>Sélectionnez un service</option>
+                                <option value="audit">Audit &amp; Conseil IA</option>
+                                <option value="solutions">Solutions IA</option>
+                                <option value="autre">Autre projet</option>
+                            </select>
+                        </div>
+                        <div class="form-group-empty"></div>
+                        
+                        <div class="form-group form-group-full">
+                            <label for="form-message" class="form-label">Message *</label>
+                            <textarea id="form-message" name="message" class="form-input form-textarea" placeholder="Décrivez vos besoins IA" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit" id="btn-submit">
+                        <span>Envoyer le message</span>
+                        <svg class="submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="banner-section" id="banner">
+        <div class="banner-container">
+            <div class="banner-card">
+                <!-- An image will be set here later -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; <span id="footer-year"></span> Synaptis. All rights reserved.</p>
+            <nav class="footer-navigation">
+                <ul class="footer-nav-list" role="list">
+                    <li><a href="#procedes" class="footer-nav-link">Procédés</a></li>
+                    <li><a href="#services" class="footer-nav-link">Services</a></li>
+                    <li><a href="#equipe" class="footer-nav-link">Notre équipe</a></li>
+                    <li><a href="#projets" class="footer-nav-link">Projets</a></li>
+                </ul>
+            </nav>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/synaptisagency/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="https://x.com/SynaptisIA" target="_blank" rel="noopener noreferrer" class="social-link">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="main.js"></script>
+</body>
+</html>
