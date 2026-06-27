@@ -109,11 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (timeline && canvas && canvasWrapper) {
         const ctx = canvas.getContext('2d');
-        const frameCount = 84;
+        const frameCount = 137;
         
         // Generate file paths
         const currentFramePath = index => 
-            `assets/animation/Landingpage/Landingpage_Sequence 2_${index.toString().padStart(5, '0')}.jpg`;
+            `assets/animation/Landingpage/FINAL_${index.toString().padStart(5, '0')}.jpg`;
         
         // Preload all JPG frames
         const images = [];
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            let activeStepIndex = -1;
+            let activeStepIndex = 0;
             
             // Phase 1: Reveal video container (0% to 40% of scroll)
             if (progress < 0.4) {
@@ -343,24 +343,52 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalBtnText = btnTextEl.textContent;
             btnTextEl.textContent = 'Envoi en cours...';
             
-            // Simulate API request (1s delay)
-            setTimeout(() => {
-                // Success state feedback
-                formStatus.textContent = 'Merci ! Votre message a bien été envoyé. Notre équipe vous recontactera sous 24h.';
-                formStatus.className = 'form-status success';
-                
-                // Reset form
-                contactForm.reset();
-                
+            // Auto-prefix website URL if missing http/https
+            const websiteInput = document.getElementById('form-website');
+            if (websiteInput && websiteInput.value) {
+                let val = websiteInput.value.trim();
+                if (val && !/^https?:\/\//i.test(val)) {
+                    websiteInput.value = 'https://' + val;
+                }
+            }
+            
+            // Send request to Web3Forms
+            const formData = new FormData(contactForm);
+            
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                const json = await response.json();
+                if (response.status === 200) {
+                    // Success state feedback
+                    formStatus.textContent = 'Merci ! Votre message a bien été envoyé. Notre équipe vous recontactera sous 24h.';
+                    formStatus.className = 'form-status success';
+                    
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    console.error("Web3Forms Error:", json);
+                    formStatus.textContent = json.message || "Une erreur est survenue lors de l'envoi.";
+                    formStatus.className = 'form-status error';
+                }
+            })
+            .catch((error) => {
+                console.error("Network Error:", error);
+                formStatus.textContent = "Impossible d'envoyer le message. Veuillez vérifier votre connexion.";
+                formStatus.className = 'form-status error';
+            })
+            .finally(() => {
                 // Restore button state
                 btnSubmit.disabled = false;
                 btnTextEl.textContent = originalBtnText;
                 
-                // Hide status after 5s
+                // Hide status after 6s
                 setTimeout(() => {
                     formStatus.className = 'form-status';
-                }, 5000);
-            }, 1000);
+                }, 6000);
+            });
         });
     }
 

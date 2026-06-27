@@ -100,116 +100,25 @@
     </section>
 
     <!-- Cards Layout Section -->
-    <section class="cards-section" id="services">
-        <div class="cards-container">
-            <div class="cards-grid">
-                <!-- Large Left Card -->
-                <div class="card card-large">
-                    <div class="card-content">
-                        <h2 class="card-title">Nos <span class="serif-title">services</span></h2>
-                        <p class="card-desc">Nous accompagnons votre entreprise dans l'adoption de l'intelligence artificielle pour optimiser vos processus et accélérer votre croissance.</p>
-                        <p class="card-desc">De l'audit initial au déploiement de solutions d'automatisation sur-mesure, nous concevons des technologies adaptées à vos objectifs opérationnels.</p>
-                        <div class="card-actions">
-                            <a href="#contact" class="btn btn-card-cta">Contact</a>
-                        </div>
-                    </div>
+    <section class="services-refont-section" id="services">
+        <div class="services-overlay"></div>
+        <div class="services-title-wrapper">
+            <h2 class="services-main-title">Nos <span class="serif-title">services</span></h2>
+        </div>
+        <div class="services-interactive-container">
+            <!-- Block Left: Audit & Conseil -->
+            <div class="service-interactive-block block-left">
+                <div class="service-block-content">
+                    <h3 class="service-block-title">Audit &amp; Conseil</h3>
+                    <p class="service-block-desc">Notre offre d'audit et de conseil est adaptée aux spécificités de votre organisation. Nous réalisons un audit détaillé de vos process et livrons des recommandations personnalisées pour intégrer l'IA de manière optimale.</p>
                 </div>
-                
-                <!-- Card 2: Audit & Conseil -->
-                <div class="card card-service card-audit">
-                    <!-- Visual Container -->
-                    <div class="service-visual-container">
-                        <div class="visual-chart-box">
-                            <span class="chart-tooltip">+15%</span>
-                            <!-- SVG Chart Path -->
-                            <svg class="chart-svg" viewBox="0 0 300 150">
-                                <defs>
-                                    <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="rgba(110, 165, 206, 0.3)" />
-                                        <stop offset="100%" stop-color="rgba(110, 165, 206, 0)" />
-                                    </linearGradient>
-                                    <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
-                                        <stop offset="0%" stop-color="rgba(110, 165, 206, 0.4)" />
-                                        <stop offset="50%" stop-color="rgba(110, 165, 206, 1)" />
-                                        <stop offset="100%" stop-color="rgba(110, 165, 206, 0.6)" />
-                                    </linearGradient>
-                                </defs>
-                                <!-- Fill Area -->
-                                <path class="chart-area" d="M 0,150 C 50,110 80,70 110,85 C 140,100 180,60 210,50 C 240,40 270,80 300,50 L 300,150 Z" fill="url(#chart-grad)" />
-                                <!-- Line Path -->
-                                <path class="chart-line" d="M 0,150 C 50,110 80,70 110,85 C 140,100 180,60 210,50 C 240,40 270,80 300,50" fill="none" stroke="url(#line-grad)" stroke-width="3" />
-                                <!-- Another wave (lower opacity) -->
-                                <path class="chart-line-secondary" d="M 0,140 C 60,80 100,120 140,70 C 185,20 220,100 300,40" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" />
-                                <!-- Active Dot -->
-                                <circle cx="210" cy="50" r="5" fill="#6ea5ce" />
-                                <circle cx="210" cy="50" r="10" fill="none" stroke="rgba(110, 165, 206, 0.3)" stroke-width="2" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Text Content -->
-                    <div class="service-content">
-                        <h3 class="service-title">Audit &amp; Conseil</h3>
-                        <p class="service-desc">Notre offre d’audit et de conseil est adaptée aux spécificités de votre organisation. Nous réalisons un audit détaillé de vos process et livrons des recommandations personnalisées pour intégrer l’IA de manière optimale.</p>
-                    </div>
-                </div>
-                
-                <!-- Card 3: Solutions IA -->
-                <div class="card card-service card-solutions">
-                    <!-- Visual Container -->
-                    <div class="service-visual-container">
-                        <div class="visual-chat-box">
-                            <!-- Chat Message 1: User -->
-                            <div class="chat-message chat-user">
-                                <div class="message-content-wrapper">
-                                    <span class="user-name">Faik Toplu</span>
-                                    <span class="user-text">Résume ce rapport</span>
-                                </div>
-                                <div class="user-avatar-wrapper">
-                                    <!-- Stylized SVG Avatar of a brown-haired man -->
-                                    <svg viewBox="0 0 40 40" class="avatar-svg">
-                                        <circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.08)" />
-                                        <!-- Hair back -->
-                                        <path d="M 12,18 C 12,9 28,9 28,18 Z" fill="#3d2b1f" />
-                                        <!-- Face -->
-                                        <circle cx="20" cy="19" r="7.5" fill="#fed7aa" />
-                                        <!-- Hair front/sides -->
-                                        <path d="M 12,15 C 13,11 27,11 28,15 C 25,12 15,12 12,15 Z" fill="#3d2b1f" />
-                                        <path d="M 12,15 L 13.5,19 L 15,16 Z" fill="#3d2b1f" />
-                                        <path d="M 28,15 L 26.5,19 L 25,16 Z" fill="#3d2b1f" />
-                                        <!-- Shoulders/Clothes -->
-                                        <path d="M 10,34 C 10,29 14,27 20,27 C 26,27 30,29 30,34 Z" fill="rgba(110, 165, 206, 0.4)" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <!-- Chat Message 2: AI -->
-                            <div class="chat-message chat-ai">
-                                <div class="ai-avatar">AI</div>
-                                <div class="message-body">
-                                    <span class="ai-name">AI assistant</span>
-                                    <div class="ai-text-wrapper">
-                                        <span class="ai-text line-1">Bien sûr, voici un résumé:</span>
-                                        <span class="ai-text line-2">1. Analyse &amp; automatisation des process.</span>
-                                        <span class="ai-text line-3">2. Intégration d'agents intelligents.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Chat Input Bar -->
-                            <div class="chat-input-bar">
-                                <svg class="input-icon-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
-                                </svg>
-                                <div class="input-placeholder"></div>
-                                <svg class="input-icon-send" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text Content -->
-                    <div class="service-content">
-                        <h3 class="service-title">Solutions IA</h3>
-                        <p class="service-desc">Nous concevons des solutions IA sur mesure : agents intelligents, automatisations, applications personnalisées et systèmes vocaux. Chaque projet est pensé pour s’intégrer naturellement à vos outils et répondre à des enjeux métiers concrets.</p>
-                    </div>
+            </div>
+
+            <!-- Block Right: Solutions IA -->
+            <div class="service-interactive-block block-right">
+                <div class="service-block-content">
+                    <h3 class="service-block-title">Solutions IA</h3>
+                    <p class="service-block-desc">Nous concevons des solutions IA sur mesure : agents intelligents, automatisations, applications personnalisées et systèmes vocaux. Chaque projet est pensé pour s'intégrer naturellement à vos outils et répondre à des enjeux métiers concrets.</p>
                 </div>
             </div>
         </div>
@@ -221,14 +130,14 @@
             <!-- Header of Section -->
             <div class="team-header">
                 <h2 class="team-section-title">Synaptis <span class="serif-title">Team</span></h2>
-                <p class="team-section-desc">Synaptis rassemble des ingénieurs et consultants unis par une mission unique : transformer les technologies de pointe en leviers de performance concrets pour votre entreprise.</p>
+                <p class="team-section-desc">Synaptis rassemble des passionnés d'intelligence artificielle unis par une mission unique : transformer les technologies de pointe en leviers de performance concrets pour votre entreprise.</p>
             </div>
             
             <!-- Team Grid -->
             <div class="team-grid">
                 <!-- Member 1: Sacha Dubernet -->
                 <a href="https://www.linkedin.com/in/sacha-dubernet/" target="_blank" rel="noopener noreferrer" class="team-card member-card">
-                    <div class="member-photo-placeholder"></div>
+                    <img class="member-photo" src="assets/images/Sacha.jpg" alt="Sacha Dubernet">
                     <div class="member-overlay">
                         <div class="member-info">
                             <h3 class="member-name">Sacha Dubernet</h3>
@@ -243,7 +152,7 @@
 
                 <!-- Member 2: Romain Mazarin -->
                 <a href="https://www.linkedin.com/in/romain-mazarin-4a8b21244/" target="_blank" rel="noopener noreferrer" class="team-card member-card">
-                    <div class="member-photo-placeholder"></div>
+                    <img class="member-photo" src="assets/images/Romain.jpg" alt="Romain Mazarin">
                     <div class="member-overlay">
                         <div class="member-info">
                             <h3 class="member-name">Romain Mazarin</h3>
@@ -346,6 +255,8 @@
 
                 <!-- Right Column: Interactive Form -->
                 <form class="contact-form" id="contact-form">
+                    <input type="hidden" name="access_key" value="10a8b921-7979-40ff-902f-9989bd08050d">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="form-name" class="form-label">Quel est votre Nom/Prénom ? *</label>
@@ -362,7 +273,7 @@
                         </div>
                         <div class="form-group">
                             <label for="form-website" class="form-label">Site web Entreprise *</label>
-                            <input type="url" id="form-website" name="website" class="form-input" placeholder="Saisissez le site web de l'entreprise" required>
+                            <input type="text" id="form-website" name="website" class="form-input" placeholder="Saisissez le site web de l'entreprise" required>
                         </div>
                         
                         <div class="form-group">
