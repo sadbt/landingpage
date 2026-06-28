@@ -502,6 +502,15 @@ ul[role="list"] {
     .header-container {
         height: 56px;
         padding: 0 8px 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        transition: height 0.3s ease;
+    }
+
+    .site-header.mobile-active .header-container {
+        height: auto;
     }
 
     /* Toggle Hamburger Button display */
@@ -550,28 +559,31 @@ ul[role="list"] {
 
     /* Mobile Nav Dropdown inside capsule */
     .primary-navigation {
-        position: absolute;
-        top: 56px;
-        left: 0;
+        position: static;
         width: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
         background: transparent;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
         transform: translateY(-10px);
-        opacity: 0;
         pointer-events: none;
-        transition: all 0.3s ease;
-        padding: 1.5rem 0 2rem;
+        transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: 1px solid transparent;
     }
 
     .primary-navigation.active {
-        transform: translateY(0);
+        max-height: 400px;
         opacity: 1;
+        transform: translateY(0);
         pointer-events: all;
+        padding: 1.5rem 0 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .nav-list {
@@ -610,7 +622,7 @@ ul[role="list"] {
 
     /* Hero Section Mobile Sizing */
     .hero-title {
-        font-size: 4.8rem;
+        font-size: 3.4rem;
         line-height: 0.95;
         margin-bottom: 1.5rem;
     }
@@ -737,17 +749,17 @@ ul[role="list"] {
     }
     
     .static-section-title {
-        top: auto;
-        bottom: 330px;
-        left: 24px;
-        font-size: 2.8rem;
+        top: 24px;
+        bottom: auto;
+        left: 16px;
+        font-size: 2.2rem;
     }
     
     .step-text-container {
-        bottom: 40px;
-        left: 24px;
-        max-width: calc(100% - 48px);
-        height: 280px; /* Increased to fit larger text on smaller viewports */
+        bottom: 30px;
+        left: 16px;
+        max-width: calc(100% - 32px);
+        height: 220px;
     }
     
     .step-title {
@@ -1601,6 +1613,7 @@ a.detail-value:hover {
 }
 
 .form-input {
+    width: 100%;
     font-family: var(--ff-primary);
     font-size: 0.95rem;
     background: rgba(255, 255, 255, 0.02);
