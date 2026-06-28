@@ -505,12 +505,12 @@ ul[role="list"] {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         transition: height 0.3s ease;
     }
 
     .site-header.mobile-active .header-container {
         height: auto;
+        flex-wrap: wrap;
     }
 
     /* Toggle Hamburger Button display */
