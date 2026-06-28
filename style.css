@@ -622,7 +622,7 @@ ul[role="list"] {
         font-size: 2.0rem;
     }
     
-    .intro-title br {
+    .intro-title br.mobile-hide {
         display: none;
     }
 
