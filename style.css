@@ -403,6 +403,16 @@ ul[role="list"] {
     z-index: 1;
     opacity: var(--bg-opacity, 0); /* Dynamic scroll-driven opacity */
 }
+.timeline-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
 
 .static-section-title {
     position: absolute;
@@ -744,6 +754,12 @@ ul[role="list"] {
 @media (max-width: 768px) {
     .intro-sticky-container {
         padding: 1.5rem;
+    }
+    
+    .timeline-text-overlay {
+        width: 100%;
+        left: 0;
+        transform: none;
     }
     
     .static-section-title {
