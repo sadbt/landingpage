@@ -756,11 +756,6 @@ ul[role="list"] {
         padding: 1.5rem;
     }
     
-    .timeline-text-overlay {
-        width: 100%;
-        left: 0;
-        transform: none;
-    }
     
     .static-section-title {
         top: auto;
