@@ -743,17 +743,19 @@ ul[role="list"] {
     }
     
     .static-section-title {
-        top: 24px;
-        bottom: auto;
+        top: auto;
+        bottom: 260px;
         left: 16px;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
     .step-text-container {
         bottom: 30px;
         left: 16px;
-        max-width: calc(100% - 32px);
-        height: 220px;
+        right: 16px;
+        width: auto;
+        max-width: none;
+        height: 190px;
     }
     
     .step-title {
