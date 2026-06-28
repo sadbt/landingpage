@@ -984,6 +984,10 @@ ul[role="list"] {
         text-align: left !important;
     }
 
+    .block-right .service-block-content {
+        text-align: right !important;
+    }
+
     .service-interactive-block:hover {
         transform: none !important;
     }
