@@ -394,7 +394,7 @@ ul[role="list"] {
 .intro-sticky-container::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -5px; /* Expanded by 5px to crop out edge artifacts/lines */
     background-image: url('assets/images/degrade rond.jpg');
     background-size: cover;
     background-position: top center;
@@ -621,6 +621,10 @@ ul[role="list"] {
     .intro-title {
         font-size: 2.0rem;
     }
+    
+    .intro-title br {
+        display: none;
+    }
 
     /* Hero Section Mobile Sizing */
     .hero-title {
@@ -752,13 +756,13 @@ ul[role="list"] {
     
     .static-section-title {
         top: auto;
-        bottom: 260px;
+        bottom: 340px;
         left: 16px;
         font-size: 2.5rem;
     }
     
     .step-text-container {
-        bottom: 30px;
+        bottom: 110px;
         left: 16px;
         right: 16px;
         width: auto;
