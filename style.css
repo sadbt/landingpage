@@ -415,7 +415,7 @@ ul[role="list"] {
     letter-spacing: -0.01em;
     line-height: 1.2;
     z-index: 20; /* Fixed above canvas inside canvas-wrapper */
-    pointer-events: none;
+    pointer-events: auto;
     /* Out state: Hide instantly and pre-blur */
     opacity: 0;
     filter: blur(15px);
@@ -829,7 +829,7 @@ ul[role="list"] {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    z-index: 3;
+    z-index: 10;
 }
 
 .services-main-title {
