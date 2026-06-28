@@ -277,18 +277,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentWrapperBorderRadius += (targetWrapperBorderRadius - currentWrapperBorderRadius) * 0.12;
             currentBgOpacity += (targetBgOpacity - currentBgOpacity) * 0.08;
             
-            // Apply visual styles to canvas wrapper (only on desktop to prevent mobile movement/bugs)
-            if (window.innerWidth > 768) {
-                canvasWrapper.style.width = currentWrapperWidth + '%';
-                canvasWrapper.style.height = currentWrapperHeight + 'vh';
-                canvasWrapper.style.transform = `translate(-50%, ${currentWrapperTranslateY}vh)`;
-                canvasWrapper.style.borderRadius = `${currentWrapperBorderRadius}px ${currentWrapperBorderRadius}px 0 0`;
-            } else {
-                canvasWrapper.style.width = '';
-                canvasWrapper.style.height = '';
-                canvasWrapper.style.transform = '';
-                canvasWrapper.style.borderRadius = '';
-            }
+            // Apply visual styles to canvas wrapper
+            canvasWrapper.style.width = currentWrapperWidth + '%';
+            canvasWrapper.style.height = currentWrapperHeight + 'vh';
+            canvasWrapper.style.transform = `translate(-50%, ${currentWrapperTranslateY}vh)`;
+            canvasWrapper.style.borderRadius = `${currentWrapperBorderRadius}px ${currentWrapperBorderRadius}px 0 0`;
             
             // Apply background opacity variable to timeline
             timeline.style.setProperty('--bg-opacity', currentBgOpacity.toFixed(3));
