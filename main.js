@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. MOBILE NAVIGATION DRAWER
     const navToggle = document.getElementById('mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.primary-navigation a');
 
     if (navToggle && primaryNav) {
         navToggle.addEventListener('click', () => {
