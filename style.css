@@ -496,7 +496,7 @@ ul[role="list"] {
     /* Expand height when active */
     .site-header.mobile-active {
         border-radius: 20px;
-        height: 320px;
+        height: 360px;
         background: rgba(15, 15, 20, 0.95);
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
