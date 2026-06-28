@@ -603,7 +603,15 @@ ul[role="list"] {
 
     /* Intro Section Mobile Sizing */
     .intro-section {
-        padding: 80px 1rem;
+        padding: 0;
+    }
+    
+    .canvas-wrapper {
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        transform: none;
+        border-radius: 0;
     }
     
     .intro-container {
