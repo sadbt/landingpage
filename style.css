@@ -403,19 +403,7 @@ ul[role="list"] {
 
 @media (max-width: 768px) {
     .hero-stats {
-        flex-direction: column;
-        gap: 2rem;
-        margin-top: 30px;
-        padding: 20px 1rem 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    
-    .hero-stat-number {
-        font-size: 1.8rem;
-    }
-    
-    .hero-stat-label {
-        font-size: 0.65rem;
+        display: none;
     }
 }
 
