@@ -1967,7 +1967,7 @@ body.preloader-active {
     height: 150px !important; /* Must match container desktop height */
     max-width: none !important; /* Prevent global image responsive rules from shrinking it */
     object-fit: contain;
-    filter: brightness(0) invert(41%) sepia(82%) saturate(2250%) hue-rotate(205deg) brightness(97%) contrast(97%);
+    filter: brightness(0) invert(1);
 }
 
 @media (max-width: 768px) {
