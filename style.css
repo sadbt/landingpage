@@ -749,12 +749,13 @@ ul[role="list"] {
     position: absolute;
     top: 14px;
     bottom: 14px;
-    width: 2px;
+    width: 6px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 2px;
+    border-radius: 6px;
     overflow: hidden;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .indicator-fill {
@@ -779,7 +780,7 @@ ul[role="list"] {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
+    background: #0d0d0d;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
     display: flex;
