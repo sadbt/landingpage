@@ -30,6 +30,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 3. HERO STATS COUNT-UP ANIMATION
+    const animateHeroStats = () => {
+        const stats = document.querySelectorAll('.hero-stat-number');
+        const duration = 2000; // 2 seconds duration
+        
+        stats.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'), 10);
+            const prefix = stat.getAttribute('data-prefix') || '';
+            const suffix = stat.getAttribute('data-suffix') || '';
+            if (isNaN(target)) return;
+            
+            let startTime = null;
+            
+            const updateCount = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Cubic ease-out
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeProgress * target);
+                
+                stat.textContent = `${prefix}${currentVal}${suffix}`;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    stat.textContent = `${prefix}${target}${suffix}`;
+                }
+            };
+            
+            requestAnimationFrame(updateCount);
+        });
+    };
+
     // 2. MOBILE NAVIGATION DRAWER
     const navToggle = document.getElementById('mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
@@ -145,6 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                         // Enable body scroll
                         document.body.classList.remove('preloader-active');
+                        // Trigger count-up animation for hero stats
+                        animateHeroStats();
                     }, 500);
                 }
             }, 16);
