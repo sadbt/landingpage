@@ -394,7 +394,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const fill = document.getElementById('proc-indicator-fill');
             if (fill) {
                 const indicatorProgress = progress >= 0.4 ? (progress - 0.4) / 0.6 : 0;
-                fill.style.height = `${indicatorProgress * 100}%`;
+                if (window.innerWidth <= 768) {
+                    fill.style.width = `${indicatorProgress * 100}%`;
+                    fill.style.height = '100%';
+                } else {
+                    fill.style.height = `${indicatorProgress * 100}%`;
+                    fill.style.width = '100%';
+                }
             }
             
             const indSteps = document.querySelectorAll('.ind-step');
