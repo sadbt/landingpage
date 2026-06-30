@@ -781,7 +781,7 @@ ul[role="list"] {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
+    background: #222226;
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
     display: flex;
