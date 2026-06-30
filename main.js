@@ -412,6 +412,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
+            const endDot = document.querySelector('.ind-end-dot');
+            if (endDot) {
+                if (progress >= 0.99) {
+                    endDot.classList.add('active');
+                } else {
+                    endDot.classList.remove('active');
+                }
+            }
+            
             // Sync static title active state with phase 2 scrubbing
             if (staticTitle) {
                 if (activeStepIndex >= 0) {
