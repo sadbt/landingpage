@@ -818,12 +818,12 @@ ul[role="list"] {
         display: flex !important;
         flex-direction: row;
         height: 28px;
-        width: 180px;
+        width: 280px;
         top: auto;
-        bottom: 395px;
-        left: 1.5rem;
+        bottom: 545px;
+        left: 50%;
         right: auto;
-        transform: none;
+        transform: translateX(-50%);
     }
     
     .proc-scroll-indicator .indicator-track {
