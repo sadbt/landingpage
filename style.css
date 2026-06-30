@@ -1207,6 +1207,9 @@ ul[role="list"] {
 
 /* Responsive adjustments for Team Section */
 @media (max-width: 992px) {
+    .team-section {
+        margin-top: -200px;
+    }
     .team-grid {
         grid-template-columns: 1fr 1fr;
     }
