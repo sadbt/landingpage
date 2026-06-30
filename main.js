@@ -119,30 +119,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const images = [];
         let loadedCount = 0;
         
+        let currentProgress = 0;
+        let targetProgress = 0;
+        let progressInterval;
+        
+        const startLoaderAnimation = () => {
+            progressInterval = setInterval(() => {
+                if (currentProgress < targetProgress) {
+                    const diff = targetProgress - currentProgress;
+                    // Increment by a maximum of 2.5% per frame (60fps) for smooth filling
+                    currentProgress += Math.min(2.5, diff);
+                }
+                
+                const fillWrapper = document.getElementById('preloader-fill-wrapper');
+                if (fillWrapper) {
+                    fillWrapper.style.width = currentProgress.toFixed(1) + '%';
+                }
+                
+                if (currentProgress >= 100) {
+                    clearInterval(progressInterval);
+                    setTimeout(() => {
+                        const preloader = document.getElementById('preloader');
+                        if (preloader) {
+                            preloader.classList.add('fade-out');
+                        }
+                        // Enable body scroll
+                        document.body.classList.remove('preloader-active');
+                    }, 500);
+                }
+            }, 16);
+        };
+        
         const updateLoaderProgress = () => {
-            const percentage = Math.round((loadedCount / frameCount) * 100);
-            
-            // Update fill wrapper width
-            const fillWrapper = document.getElementById('preloader-fill-wrapper');
-            
-            if (fillWrapper) {
-                fillWrapper.style.width = percentage + '%';
-            }
-            
-            if (loadedCount === frameCount) {
-                // All images preloaded!
-                setTimeout(() => {
-                    const preloader = document.getElementById('preloader');
-                    if (preloader) {
-                        preloader.classList.add('fade-out');
-                    }
-                    // Enable body scroll!
-                    document.body.classList.remove('preloader-active');
-                }, 800); // 800ms delay for a satisfying 100% complete state
-            }
+            targetProgress = Math.round((loadedCount / frameCount) * 100);
         };
         
         const preloadImages = () => {
+            // Start the smooth loader animation loop
+            startLoaderAnimation();
+            
             for (let i = 0; i < frameCount; i++) {
                 const img = new Image();
                 img.src = currentFramePath(i);
