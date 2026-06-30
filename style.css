@@ -946,7 +946,7 @@ ul[role="list"] {
 
     .services-title-wrapper {
         position: relative;
-        top: 0;
+        top: -100px;
         left: 0;
         transform: none;
         margin-bottom: 50px;
@@ -955,6 +955,7 @@ ul[role="list"] {
 
     .services-interactive-container {
         position: relative;
+        top: -100px;
         display: flex;
         flex-direction: column;
         gap: 80px;
