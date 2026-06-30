@@ -975,6 +975,10 @@ ul[role="list"] {
         transform: none !important;
     }
 
+    .service-interactive-block.block-right {
+        top: 50px !important;
+    }
+
     .service-block-content {
         position: relative;
         top: auto;
