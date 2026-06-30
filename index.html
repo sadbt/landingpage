@@ -8,7 +8,20 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="preloader-active">
+    <!-- Preloader Screen -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-container">
+                <img src="assets/logo/synaptislogo.png" alt="Synaptis" class="preloader-logo-bg">
+                <div class="preloader-logo-fill-wrapper" id="preloader-fill-wrapper">
+                    <img src="assets/logo/synaptislogo.png" alt="Synaptis" class="preloader-logo-fill">
+                </div>
+            </div>
+            <div class="preloader-progress-text" id="preloader-text">0%</div>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <header class="site-header" id="site-header">
         <div class="header-container">

@@ -119,15 +119,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const images = [];
         let loadedCount = 0;
         
+        const updateLoaderProgress = () => {
+            const percentage = Math.round((loadedCount / frameCount) * 100);
+            
+            // Update fill wrapper width
+            const fillWrapper = document.getElementById('preloader-fill-wrapper');
+            const progressText = document.getElementById('preloader-text');
+            
+            if (fillWrapper) {
+                fillWrapper.style.width = percentage + '%';
+            }
+            if (progressText) {
+                progressText.textContent = percentage + '%';
+            }
+            
+            if (loadedCount === frameCount) {
+                // All images preloaded!
+                setTimeout(() => {
+                    const preloader = document.getElementById('preloader');
+                    if (preloader) {
+                        preloader.classList.add('fade-out');
+                    }
+                    // Enable body scroll!
+                    document.body.classList.remove('preloader-active');
+                }, 800); // 800ms delay for a satisfying 100% complete state
+            }
+        };
+        
         const preloadImages = () => {
             for (let i = 0; i < frameCount; i++) {
                 const img = new Image();
                 img.src = currentFramePath(i);
                 img.onload = () => {
                     loadedCount++;
+                    updateLoaderProgress();
                     if (i === 0) {
                         drawFrame(0);
                     }
+                };
+                img.onerror = () => {
+                    // Count error load to prevent preloader from getting stuck
+                    loadedCount++;
+                    updateLoaderProgress();
                 };
                 images.push(img);
             }

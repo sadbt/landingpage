@@ -1905,5 +1905,77 @@ a.detail-value:hover {
     }
 }
 
+/* ==========================================================================
+   PRELOADER SCREEN
+   ========================================================================== */
+body.preloader-active {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.preloader.fade-out {
+    transform: translateY(-100%);
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.preloader-logo-container {
+    position: relative;
+    width: 240px;
+    height: 60px;
+}
+
+.preloader-logo-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.15;
+    filter: grayscale(1) brightness(0.6);
+}
+
+.preloader-logo-fill-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%; /* Dynamically animated via JS */
+    overflow: hidden;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preloader-logo-fill {
+    width: 240px; /* Must match container width */
+    height: 60px; /* Must match container height */
+    object-fit: contain;
+}
+
+.preloader-progress-text {
+    font-family: var(--ff-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--clr-text-secondary);
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
 
 
