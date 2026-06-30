@@ -155,8 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         const preloadImages = () => {
-            // Start the smooth loader animation loop
-            startLoaderAnimation();
+            // Start the smooth loader animation loop after the 1.2s logo reveal transition is complete
+            setTimeout(() => {
+                startLoaderAnimation();
+            }, 1200);
             
             for (let i = 0; i < frameCount; i++) {
                 const img = new Image();
