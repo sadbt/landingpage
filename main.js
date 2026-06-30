@@ -381,16 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Update vertical scroll indicator for Notre Procédé section
-            const scrollIndicator = document.querySelector('.proc-scroll-indicator');
-            if (scrollIndicator) {
-                if (progress >= 0.4) {
-                    scrollIndicator.classList.add('active');
-                } else {
-                    scrollIndicator.classList.remove('active');
-                }
-            }
-
             const fill = document.getElementById('proc-indicator-fill');
             if (fill) {
                 const indicatorProgress = progress >= 0.4 ? (progress - 0.4) / 0.6 : 0;
