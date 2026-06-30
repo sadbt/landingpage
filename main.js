@@ -158,12 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sectionHeight = rect.height;
                 
                 // Map step index to target scroll progress fraction:
-                // Step 0: progress = 0.4 (start of Step 1)
-                // Step 1: progress = 0.6 (start of Step 2)
-                // Step 2: progress = 0.8 (start of Step 3)
-                let targetProgress = 0.4;
-                if (stepIdx === 1) targetProgress = 0.6;
-                if (stepIdx === 2) targetProgress = 0.8;
+                // Step 0: progress = 0.44 (20% into Step 1)
+                // Step 1: progress = 0.64 (20% into Step 2)
+                // Step 2: progress = 0.84 (20% into Step 3)
+                let targetProgress = 0.44;
+                if (stepIdx === 1) targetProgress = 0.64;
+                if (stepIdx === 2) targetProgress = 0.84;
                 
                 const targetScroll = sectionTop + targetProgress * (sectionHeight - viewportHeight);
                 
