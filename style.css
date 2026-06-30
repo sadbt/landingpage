@@ -363,6 +363,62 @@ ul[role="list"] {
 
 /* Removed Bottom Partners Info as requested */
 
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+    margin: 40px auto 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 24px 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.hero-stat-number {
+    font-family: var(--ff-primary);
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--clr-text-primary);
+    letter-spacing: -0.01em;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.hero-stat-label {
+    font-family: var(--ff-accent);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 30px;
+        padding: 20px 1rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    
+    .hero-stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .hero-stat-label {
+        font-size: 0.65rem;
+    }
+}
+
 /* ==========================================================================
    INTRO SECTION (L'INTELLIGENCE ORGANIQUE)
    ========================================================================== */
@@ -916,8 +972,47 @@ ul[role="list"] {
     pointer-events: none;
 }
 
+.service-meta {
+    margin: 15px auto 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(15px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50px;
+    width: fit-content;
+}
+
+.service-meta-label {
+    font-family: var(--ff-accent);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.service-meta-value {
+    font-family: var(--ff-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--clr-text-primary);
+}
+
 /* Hover effects */
 .service-interactive-block:hover .service-block-desc {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.service-interactive-block:hover .service-meta {
     opacity: 1;
     filter: blur(0px);
     transform: translateY(0);
@@ -1007,6 +1102,21 @@ ul[role="list"] {
         transform: none;
         pointer-events: auto;
         font-size: 1.05rem;
+    }
+
+    .service-interactive-block .service-meta {
+        opacity: 1;
+        filter: blur(0px);
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .block-left .service-meta {
+        margin: 15px 0 0 0;
+    }
+
+    .block-right .service-meta {
+        margin: 15px 0 0 auto;
     }
 }
 
@@ -1390,12 +1500,46 @@ ul[role="list"] {
     overflow: hidden;
 }
 
+.project-body-inner {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .project-desc {
     font-family: var(--ff-primary);
     font-size: 0.95rem;
     line-height: 1.5;
     color: var(--clr-text-secondary);
-    min-height: 0;
+}
+
+.project-result {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: rgba(110, 165, 206, 0.06);
+    border: 1px solid rgba(110, 165, 206, 0.12);
+    width: fit-content;
+}
+
+.result-number {
+    font-family: var(--ff-primary);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #6ea5ce;
+    text-shadow: 0 0 10px rgba(110, 165, 206, 0.2);
+}
+
+.result-label {
+    font-family: var(--ff-accent);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* Active State Styles */
@@ -1562,6 +1706,35 @@ ul[role="list"] {
     line-height: 1.6;
     color: var(--clr-text-secondary);
     max-width: 480px;
+}
+
+.contact-reassurances {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.reassurance-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reassurance-icon {
+    width: 20px;
+    height: 20px;
+    color: #6ea5ce;
+    opacity: 0.85;
+}
+
+.reassurance-item span {
+    font-family: var(--ff-accent);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .contact-details {
