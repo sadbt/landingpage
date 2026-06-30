@@ -298,7 +298,7 @@ ul[role="list"] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 4;
 }
 
 .hero-content {
