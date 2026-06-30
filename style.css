@@ -1945,14 +1945,13 @@ body.preloader-active {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
 }
 
 .preloader-logo-container {
     position: relative;
     width: 600px;
     height: 150px;
-    transform: translateY(100%);
+    transform: translateY(calc(100% + 30px));
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
