@@ -124,13 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Update fill wrapper width
             const fillWrapper = document.getElementById('preloader-fill-wrapper');
-            const progressText = document.getElementById('preloader-text');
             
             if (fillWrapper) {
                 fillWrapper.style.width = percentage + '%';
-            }
-            if (progressText) {
-                progressText.textContent = percentage + '%';
             }
             
             if (loadedCount === frameCount) {

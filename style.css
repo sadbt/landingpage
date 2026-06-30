@@ -1935,21 +1935,20 @@ body.preloader-active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    width: 100%;
 }
 
 .preloader-logo-container {
     position: relative;
-    width: 240px;
-    height: 60px;
+    width: 600px;
+    height: 150px;
 }
 
 .preloader-logo-bg {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0.15;
-    filter: grayscale(1) brightness(0.6);
+    filter: grayscale(1) brightness(0.25);
 }
 
 .preloader-logo-fill-wrapper {
@@ -1963,18 +1962,29 @@ body.preloader-active {
 }
 
 .preloader-logo-fill {
-    width: 240px; /* Must match container width */
-    height: 60px; /* Must match container height */
-    object-fit: contain;
+    width: 600px; /* Must match container desktop width */
+    height: 150px; /* Must match container desktop height */
+    background-color: var(--clr-accent);
+    -webkit-mask-image: url('assets/logo/synaptislogo.png');
+    mask-image: url('assets/logo/synaptislogo.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
 }
 
-.preloader-progress-text {
-    font-family: var(--ff-primary);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--clr-text-secondary);
-    letter-spacing: 0.05em;
-    opacity: 0.6;
+@media (max-width: 768px) {
+    .preloader-logo-container {
+        width: 280px;
+        height: 70px;
+    }
+    
+    .preloader-logo-fill {
+        width: 280px;
+        height: 70px;
+    }
 }
 
 
