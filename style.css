@@ -1964,15 +1964,8 @@ body.preloader-active {
 .preloader-logo-fill {
     width: 600px; /* Must match container desktop width */
     height: 150px; /* Must match container desktop height */
-    background-color: var(--clr-accent);
-    -webkit-mask-image: url('assets/logo/synaptislogo.png');
-    mask-image: url('assets/logo/synaptislogo.png');
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
+    object-fit: contain;
+    filter: brightness(0) invert(41%) sepia(82%) saturate(2250%) hue-rotate(205deg) brightness(97%) contrast(97%);
 }
 
 @media (max-width: 768px) {
