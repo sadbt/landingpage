@@ -393,6 +393,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Init
         preloadImages();
         
+        // Trigger logo reveal entrance animation immediately
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('reveal-active');
+            }
+        }, 100);
+        
         // Listeners
         window.addEventListener('scroll', updateScrollProgress, { passive: true });
         window.addEventListener('resize', () => {
