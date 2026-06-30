@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Generate file paths
         const currentFramePath = index => 
-            `assets/animation/Landingpage/FINAL_${index.toString().padStart(5, '0')}.jpg`;
+            `assets/animation/Landingpage/FINAL_${index.toString().padStart(5, '0')}.webp`;
         
         // Preload all JPG frames
         const images = [];
