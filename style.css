@@ -779,9 +779,9 @@ ul[role="list"] {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #000000;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -804,10 +804,10 @@ ul[role="list"] {
 }
 
 .ind-step.active {
-    border-color: #6ea5ce;
-    color: #6ea5ce;
-    box-shadow: 0 0 12px rgba(110, 165, 206, 0.3);
-    background: #0d0d0d;
+    background: #ffffff;
+    border: none;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 992px) {
