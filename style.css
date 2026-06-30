@@ -743,6 +743,7 @@ ul[role="list"] {
 .proc-scroll-indicator.active {
     opacity: 1;
     filter: blur(0);
+    pointer-events: auto;
 }
 
 .indicator-track {
@@ -790,6 +791,7 @@ ul[role="list"] {
     font-size: 0.75rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .ind-step[data-step-index="0"] {

@@ -145,6 +145,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const introContent = document.querySelector('.intro-content');
     
     if (timeline && canvas && canvasWrapper) {
+        // Click handler for vertical indicator steps to scroll to their respective positions
+        const indSteps = document.querySelectorAll('.ind-step');
+        indSteps.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const stepIdx = parseInt(btn.getAttribute('data-step-index'), 10);
+                
+                const rect = timeline.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                const sectionTop = window.pageYOffset + rect.top;
+                const sectionHeight = rect.height;
+                
+                // Map step index to target scroll progress fraction:
+                // Step 0: progress = 0.5 (center of Step 1)
+                // Step 1: progress = 0.7 (center of Step 2)
+                // Step 2: progress = 0.9 (center of Step 3)
+                let targetProgress = 0.5;
+                if (stepIdx === 1) targetProgress = 0.7;
+                if (stepIdx === 2) targetProgress = 0.9;
+                
+                const targetScroll = sectionTop + targetProgress * (sectionHeight - viewportHeight);
+                
+                window.scrollTo({
+                    top: targetScroll,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
         const ctx = canvas.getContext('2d');
         const frameCount = 137;
         
