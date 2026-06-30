@@ -747,12 +747,14 @@ ul[role="list"] {
 
 .indicator-track {
     position: absolute;
-    top: 10px;
-    bottom: 10px;
+    top: 14px;
+    bottom: 14px;
     width: 2px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 2px;
     overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .indicator-fill {
@@ -764,16 +766,16 @@ ul[role="list"] {
 }
 
 .indicator-steps {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
     position: relative;
+    width: 28px;
+    height: 100%;
     z-index: 2;
 }
 
 .ind-step {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -787,6 +789,18 @@ ul[role="list"] {
     font-size: 0.75rem;
     font-weight: 500;
     transition: all 0.3s ease;
+}
+
+.ind-step[data-step-index="0"] {
+    top: 14px;
+}
+
+.ind-step[data-step-index="1"] {
+    top: calc(14px + 0.3333 * (100% - 28px));
+}
+
+.ind-step[data-step-index="2"] {
+    top: calc(14px + 0.6666 * (100% - 28px));
 }
 
 .ind-step.active {
