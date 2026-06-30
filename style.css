@@ -818,7 +818,7 @@ ul[role="list"] {
         display: flex !important;
         flex-direction: row;
         height: 28px;
-        width: 280px;
+        width: 85%;
         top: auto;
         bottom: 545px;
         left: 50%;
