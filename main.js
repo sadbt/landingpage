@@ -195,9 +195,27 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const updateScrollProgress = () => {
             const rect = timeline.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Check if timeline section is in viewport
+            const isInViewport = rect.top < viewportHeight && rect.bottom > 0;
+            
+            // Sync intro content active state (visible when section starts entering viewport)
+            if (introContent) {
+                if (isInViewport) {
+                    introContent.classList.add('active');
+                } else {
+                    introContent.classList.remove('active');
+                }
+            }
+            
+            if (!isInViewport) {
+                // If not in viewport, stop here to save CPU/memory
+                return;
+            }
+            
             const sectionTop = window.pageYOffset + rect.top;
             const sectionHeight = rect.height;
-            const viewportHeight = window.innerHeight;
             
             // Calculate scroll percentage relative to track length
             const scrollFraction = (window.pageYOffset - sectionTop) / (sectionHeight - viewportHeight);
@@ -209,15 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentY = rect.top;
             const bgOpacityFraction = (startY - currentY) / (startY - endY);
             targetBgOpacity = Math.max(0, Math.min(1, bgOpacityFraction));
-            
-            // Sync intro content active state (visible when section starts entering viewport)
-            if (introContent) {
-                if (rect.top < viewportHeight && rect.bottom > 0) {
-                    introContent.classList.add('active');
-                } else {
-                    introContent.classList.remove('active');
-                }
-            }
             
             let activeStepIndex = 0;
             
@@ -266,17 +275,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     staticTitle.classList.remove('active');
                 }
             }
+            
+            // Trigger animation loop if it's not already running
+            if (!isAnimating) {
+                isAnimating = true;
+                requestAnimationFrame(animate);
+            }
         };
         
-        // Core Animation loop for smooth interpolation
-        const animate = () => {
-            currentFrame += (targetFrame - currentFrame) * 0.15;
-            currentWrapperWidth += (targetWrapperWidth - currentWrapperWidth) * 0.12;
-            currentWrapperHeight += (targetWrapperHeight - currentWrapperHeight) * 0.12;
-            currentWrapperTranslateY += (targetWrapperTranslateY - currentWrapperTranslateY) * 0.12;
-            currentWrapperBorderRadius += (targetWrapperBorderRadius - currentWrapperBorderRadius) * 0.12;
-            currentBgOpacity += (targetBgOpacity - currentBgOpacity) * 0.08;
-            
+        let isAnimating = false;
+        
+        const applyStyles = () => {
             // Apply visual styles to canvas wrapper
             canvasWrapper.style.width = currentWrapperWidth + '%';
             canvasWrapper.style.height = currentWrapperHeight + 'vh';
@@ -291,6 +300,48 @@ document.addEventListener('DOMContentLoaded', () => {
             if (images[frameToDraw]) {
                 drawFrame(frameToDraw);
             }
+        };
+        
+        // Core Animation loop for smooth interpolation (runs on-demand)
+        const animate = () => {
+            const frameDiff = targetFrame - currentFrame;
+            const widthDiff = targetWrapperWidth - currentWrapperWidth;
+            const heightDiff = targetWrapperHeight - currentWrapperHeight;
+            const translateYDiff = targetWrapperTranslateY - currentWrapperTranslateY;
+            const borderRadiusDiff = targetWrapperBorderRadius - currentWrapperBorderRadius;
+            const bgOpacityDiff = targetBgOpacity - currentBgOpacity;
+            
+            const threshold = 0.005;
+            
+            // If all differences are extremely small, snap to targets and stop the loop
+            if (
+                Math.abs(frameDiff) < threshold &&
+                Math.abs(widthDiff) < threshold &&
+                Math.abs(heightDiff) < threshold &&
+                Math.abs(translateYDiff) < threshold &&
+                Math.abs(borderRadiusDiff) < threshold &&
+                Math.abs(bgOpacityDiff) < threshold
+            ) {
+                currentFrame = targetFrame;
+                currentWrapperWidth = targetWrapperWidth;
+                currentWrapperHeight = targetWrapperHeight;
+                currentWrapperTranslateY = targetWrapperTranslateY;
+                currentWrapperBorderRadius = targetWrapperBorderRadius;
+                currentBgOpacity = targetBgOpacity;
+                
+                applyStyles();
+                isAnimating = false;
+                return; // Stop animation loop
+            }
+            
+            currentFrame += frameDiff * 0.15;
+            currentWrapperWidth += widthDiff * 0.12;
+            currentWrapperHeight += heightDiff * 0.12;
+            currentWrapperTranslateY += translateYDiff * 0.12;
+            currentWrapperBorderRadius += borderRadiusDiff * 0.12;
+            currentBgOpacity += bgOpacityDiff * 0.08;
+            
+            applyStyles();
             
             requestAnimationFrame(animate);
         };
@@ -307,7 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Initial setup run
         updateScrollProgress();
-        animate();
     }
 
     // 5. PROJECTS ACCORDION INTERACTION
