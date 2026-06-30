@@ -723,6 +723,85 @@ ul[role="list"] {
     display: block;
 }
 
+/* Scroll Progress Timeline Indicator (Right Side) */
+.proc-scroll-indicator {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 220px;
+    z-index: 25;
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-content.active ~ .proc-scroll-indicator {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.indicator-track {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.indicator-fill {
+    width: 100%;
+    height: 0%;
+    background: #6ea5ce;
+    box-shadow: 0 0 10px rgba(110, 165, 206, 0.8);
+    transition: height 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.indicator-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.ind-step {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.ind-step.active {
+    border-color: #6ea5ce;
+    color: #6ea5ce;
+    box-shadow: 0 0 12px rgba(110, 165, 206, 0.3);
+    background: #0d0d0d;
+}
+
+@media (max-width: 992px) {
+    .proc-scroll-indicator {
+        display: none !important;
+    }
+}
+
 /* Step Text Overlays (Bottom Left) */
 .step-text-container {
     position: absolute;

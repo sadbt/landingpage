@@ -352,6 +352,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
+            // Update vertical scroll indicator for Notre Procédé section
+            const fill = document.getElementById('proc-indicator-fill');
+            if (fill) {
+                const indicatorProgress = progress >= 0.4 ? (progress - 0.4) / 0.6 : 0;
+                fill.style.height = `${indicatorProgress * 100}%`;
+            }
+            
+            const indSteps = document.querySelectorAll('.ind-step');
+            indSteps.forEach((el, idx) => {
+                if (idx === activeStepIndex) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+            
             // Sync static title active state with phase 2 scrubbing
             if (staticTitle) {
                 if (activeStepIndex >= 0) {
