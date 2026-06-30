@@ -37,10 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         stats.forEach(stat => {
             const target = parseInt(stat.getAttribute('data-target'), 10);
+            const start = parseInt(stat.getAttribute('data-start'), 10) || 0;
             const prefix = stat.getAttribute('data-prefix') || '';
             const suffix = stat.getAttribute('data-suffix') || '';
             if (isNaN(target)) return;
             
+            const diff = target - start;
             let startTime = null;
             
             const updateCount = (timestamp) => {
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Cubic ease-out
                 const easeProgress = 1 - Math.pow(1 - progress, 3);
-                const currentVal = Math.floor(easeProgress * target);
+                const currentVal = Math.round(start + easeProgress * diff);
                 
                 stat.textContent = `${prefix}${currentVal}${suffix}`;
                 
